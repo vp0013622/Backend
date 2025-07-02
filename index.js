@@ -233,6 +233,8 @@ app.use('/api/leads',AuthMiddelware, LeadsRouter)
 app.use('/api/documents',AuthMiddelware, DocumentRouter)
 app.use('/api/documenttypes',AuthMiddelware, DocumentTypesRouter)
 
+
+//document type and document updated in github 02_06_2025
 // Error handling middleware should be LAST - after all routes
 // app.use(errorHandler); // Temporarily disabled for debugging
 

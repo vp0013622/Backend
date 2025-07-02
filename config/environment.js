@@ -10,7 +10,7 @@ const config = {
     PORT: process.env.PORT || 3001,
     DB_CONNECTION_STRING: process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/inhabit_dev',
     JWT_SECRET: process.env.JWT_SECRET || 'dev-secret-key-change-in-production',
-    CORS_ORIGIN: process.env.CORS_ORIGIN || 'http://localhost:3000',
+    CORS_ORIGIN: process.env.CORS_ORIGIN || 'http://localhost:5173/',
     UPLOAD_PATH: process.env.UPLOAD_PATH || './uploads',
     PROFILE_IMAGES_PATH: process.env.PROFILE_IMAGES_PATH || './profileImages',
     PROPERTY_IMAGES_PATH: process.env.PROPERTY_IMAGES_PATH || './propertyImagesUploads',

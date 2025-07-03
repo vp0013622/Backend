@@ -46,10 +46,10 @@ const __dirname = path.dirname(__filename);
 app.use(express.json())
 
 //middle ware for cores policy: configured for environment
-app.use(cors({
-  origin: config.CORS_ORIGIN,
-  credentials: true
-}));
+// app.use(cors({
+//   origin: config.CORS_ORIGIN,
+//   credentials: true
+// }));
 
 //defult route.
 app.get('/', (req, res)=>{

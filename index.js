@@ -48,7 +48,11 @@ app.use(express.json())
 //middle ware for cores policy: configured for environment
 app.use(cors({
   //origin: config.CORS_ORIGIN,
+//<<<<<<< HEAD
   origin: "*",
+//=======
+  origin: '*',
+//>>>>>>> 3cfd837 (Add assigned leads endpoint, fix route order, and update leads controller)
   credentials: true
 }));
 

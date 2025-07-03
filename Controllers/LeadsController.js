@@ -287,6 +287,35 @@ const DeleteById = async (req, res) => {
     }
 }
 
+const GetAssignedLeadsForCurrentUser = async (req, res) => {
+    try {
+        const currentUserId = req.user.id
+        
+        const leads = await LeadsModel.find({ 
+            assignedToUserId: currentUserId,
+            published: true 
+        })
+            .populate('userId')
+            .populate('leadStatus')
+            .populate('referanceFrom')
+            .populate('followUpStatus')
+            .populate('referredByUserId')
+            .populate('assignedByUserId')
+            .populate('assignedToUserId')
+
+        return res.status(200).json({
+            message: 'Assigned leads for current user',
+            count: leads.length,
+            data: leads
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Internal server error',
+            error: error.message
+        })
+    }
+}
+
 export {
     Create,
     GetAllLeads,
@@ -294,5 +323,6 @@ export {
     GetAllLeadsWithParams,
     GetLeadById,
     Edit,
-    DeleteById
+    DeleteById,
+    GetAssignedLeadsForCurrentUser
 }

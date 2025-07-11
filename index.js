@@ -28,6 +28,7 @@ import ReferenceSourceRouter from './Routes/referenceSourceRoutes.js'
 import ContactUsRouter from './Routes/contactUsRoutes.js'
 import DocumentRouter from './Routes/documentRoutes.js'
 import DocumentTypesRouter from './Routes/documentTypesRoutes.js'
+import DashboardRouter from './Routes/dashboardRoutes.js'
 
 // Import environment configuration
 import config from './config/environment.js'
@@ -237,6 +238,7 @@ app.use('/api/referancesource',AuthMiddelware, ReferenceSourceRouter)
 app.use('/api/leads',AuthMiddelware, LeadsRouter)
 app.use('/api/documents',AuthMiddelware, DocumentRouter)
 app.use('/api/documenttypes',AuthMiddelware, DocumentTypesRouter)
+app.use('/api/dashboard',AuthMiddelware, DashboardRouter)
 
 
 //document type and document updated in github 02_06_2025
